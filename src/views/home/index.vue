@@ -49,6 +49,7 @@ import ChartLine from './components/ChartLine.vue'
 .el-space__item {
     flex: 1;
     min-width: 300px;
+    width: 500px;
 }
 
 </style>

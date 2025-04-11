@@ -1,5 +1,5 @@
 <template>
-    <div ref="echartsRef" :style="{ width: width, height: height }"></div>
+    <div ref="echartsRef" :style="{ width: width, height: height,minWidth:minWidth }"></div>
   </template>
   
   <script setup lang="ts">
@@ -18,11 +18,13 @@
     data?: LineBarData[];
     width?: string;
     height?: string;
+    minWidth?: string;
   }
   
   const props = withDefaults(defineProps<ChartBarProps>(), {
-    width: "100%",
+    width: "800px",
     height: "300px",
+    minWidth:'500px',
     data: () => [
       { category: "2024-12-01", lineData: 200, barData: 150, lineName: "访问量", barName: "用户量" },
       { category: "2024-12-02", lineData: 385, barData: 341, lineName: "访问量", barName: "用户量" },
