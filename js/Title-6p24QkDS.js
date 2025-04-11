@@ -1,0 +1,1 @@
+import{c as a,a as o,b as s,e as c,C as i,aw as n}from"./index-D7NfjVa-.js";const r={class:"common-title"},d={__name:"Title",props:{title:{type:String,default:""}},setup(e){return(l,_)=>{const t=n;return o(),a("div",null,[s("h1",r,i(e.title),1),c(t)])}}};export{d as _};
