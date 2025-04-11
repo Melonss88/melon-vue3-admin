@@ -5,16 +5,16 @@
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
-    "jsxImportSource": "vue",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "noEmit": true,
     "lib": ["ESNext", "DOM"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["vite/client", "vue", "element-plus/global"],
+    "types": ["vite/client", "vue"],
     "skipLibCheck": true
   },
   "include": [
