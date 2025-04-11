@@ -63,6 +63,7 @@ export default defineConfig({
     }
   },
   // 构建配置
+  base: '/melon-vue3-admin/',
   build: {
     chunkSizeWarningLimit: 2000, // 调整块大小警告限制
     assetsInlineLimit: 4096, // 小于此值的资源将内联为 base64
