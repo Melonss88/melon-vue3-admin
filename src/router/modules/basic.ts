@@ -30,10 +30,10 @@ const basicRoutes: RouteRecordRaw = {
     },
     {
       path: "/i18n",
-      name: "i18n",
-      component: () => import("@/views/basic/i18n.vue"),
+      name: "I18n",
+      component: () => import("@/views/basic/I18n.vue"),
       meta: { 
-        title: "i18n", 
+        title: "I18n", 
         icon: StarFilled,
       },
     },
@@ -97,15 +97,6 @@ const basicRoutes: RouteRecordRaw = {
       component: () => import("@/views/basic/Switch.vue"),
       meta: { 
         title: "Switch", 
-        icon: StarFilled,
-      },
-    },
-    {
-      path: "/upload",
-      name: "Upload",
-      component: () => import("@/views/basic/Upload.vue"),
-      meta: { 
-        title: "Upload", 
         icon: StarFilled,
       },
     },

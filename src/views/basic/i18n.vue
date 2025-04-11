@@ -18,7 +18,7 @@
     </div>
   </template>
   
-  <script lang="ts" setup name='i18n'>
+  <script lang="ts" setup name='I18n'>
     import Title from '@/components/Title.vue'
     import Config from '@/components/Config.vue'
     import { computed, ref } from 'vue'

@@ -15,7 +15,7 @@
   }
   
   interface ChartBarProps {
-    data: LineBarData[];
+    data?: LineBarData[];
     width?: string;
     height?: string;
   }

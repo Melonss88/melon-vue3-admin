@@ -61,6 +61,12 @@
     captcha: '',
     rememberMe: false
   })
+
+  const rules = {
+    username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+    password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+    captcha: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
+  };
   
   // 记录当前图形验证码
   const generatedCaptcha = ref('')
@@ -84,7 +90,7 @@
         router.push(redirect)
       }
     } catch (error) {
-      ElMessage.error(error.message || '登录失败')
+      ElMessage.error('登录失败')
     }
   }
   

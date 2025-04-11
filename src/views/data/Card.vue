@@ -29,6 +29,7 @@
 </template>
   
   <script lang="ts" setup name='Card'>
+  import Config from '@/components/Config.vue';
 
 const configData = [
   {
@@ -42,26 +43,23 @@ const configData = [
     declare: '卡片页脚。既可以通过设置 footer 修改卡片底部内容，也可以通过 slot#footer 传入 DOM 节点',
     type: 'string',
     default: '—',
-    since: '2.4.3'
   },
   {
     name: 'body-style',
     declare: 'body 的 CSS 样式',
     type: 'object',
-    default: {}
+    default: ''
   },
   {
     name: 'body-class',
     declare: 'body 的自定义类名',
     type: 'string',
     default: '',
-    since: '2.3.10'
   },
   {
     name: 'shadow',
     declare: '卡片阴影显示时机',
     type: 'enum',
-    options: ['always', 'hover', 'never'],
     default: 'always'
   }
 ];

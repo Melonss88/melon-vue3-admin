@@ -37,6 +37,15 @@ const carouselRoutes: RouteRecordRaw = {
         icon: StarFilled,
       },
     },
+    {
+      path: "/upload",
+      name: "Upload",
+      component: () => import("@/views/image/Upload.vue"),
+      meta: { 
+        title: "Upload", 
+        icon: StarFilled,
+      },
+    },
   ],
 };
 

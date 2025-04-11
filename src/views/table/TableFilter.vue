@@ -77,9 +77,9 @@ const filterHandler = (
   row: User,
   column: TableColumnCtx<User>
 ) => {
-  const property = column['property']
-  return row[property] === value
-}
+  const property = column.property as keyof User;
+  return row[property] === value;
+};
 
 const tableData: User[] = [
   {

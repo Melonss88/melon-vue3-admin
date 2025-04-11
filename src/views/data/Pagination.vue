@@ -113,10 +113,8 @@ const configData = [
   {
     name: 'size',
     declare: '分页大小',
-    type: 'enum',
-    options: ['default', 'small', 'large'],
+    type:  "['default', 'small', 'large']",
     default: 'default',
-    since: '2.7.6'
   },
   {
     name: 'background',
@@ -183,7 +181,6 @@ const configData = [
     declare: '下拉框挂载到哪个 DOM 元素',
     type: 'string',
     default: '—',
-    since: '2.8.4'
   },
   {
     name: 'popper-class',
@@ -226,7 +223,6 @@ const configData = [
     declare: '是否将下拉菜单 teleport 至 body',
     type: 'boolean',
     default: true,
-    since: '2.3.13'
   },
   {
     name: 'hide-on-single-page',
@@ -239,7 +235,6 @@ const configData = [
     declare: '是否使用小型分页样式（已废弃）',
     type: 'boolean',
     default: false,
-    deprecated: true
   }
 ];
 </script>

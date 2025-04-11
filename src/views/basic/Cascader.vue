@@ -40,7 +40,7 @@
     expandTrigger: 'hover' as const,
   }
   
-  const handleChange = (value) => {
+  const handleChange = (value:any) => {
     console.log(value)
   }
   

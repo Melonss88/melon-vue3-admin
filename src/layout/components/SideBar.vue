@@ -9,9 +9,6 @@ import {
   Lock,
   Star,
   Link,
-  WarnTriangleFilled,
-  StarFilled,
-  Opportunity
 } from "@element-plus/icons-vue";
 import { routes as rawRoutes } from "@/router";
 
@@ -37,24 +34,40 @@ const iconMap: Record<string, any> = {
   link: Link,
   default: Document,
 };
+interface RawRoute {
+  path: string;
+  name?: string;
+  meta?: {
+    title?: string;
+    icon?: keyof typeof iconMap;
+    hidden?: boolean;
+  };
+  children?: RawRoute[];
+}
 
-// 从路由生成菜单项
+const typedRoutes = rawRoutes as RawRoute[];
+
 const menuItems = computed<MenuItem[]>(() => {
-  const layoutRoute = rawRoutes.find(r => r.path === "/");
+  const layoutRoute = typedRoutes.find(r => r.path === "/");
   if (!layoutRoute || !layoutRoute.children) return [];
 
   return layoutRoute.children
     .filter(route => !route.meta?.hidden)
     .map(route => {
+      const children: MenuItem[] =
+        (route.children ?? [])
+          .filter((child): child is RawRoute => !!child && !child.meta?.hidden)
+          .map(child => ({
+            path: child.path,
+            title: child.meta?.title?.toString() || child.name?.toString() || "未命名页面",
+            icon: iconMap[child.meta?.icon || "default"],
+          })) || [];
+
       const menuItem: MenuItem = {
         path: route.path,
         title: route.meta?.title?.toString() || route.name?.toString() || "未命名页面",
-        icon: route.meta?.icon || iconMap.default,
-        children: route.children?.filter(child => !child.meta?.hidden).map(child => ({
-          path: child.path,
-          title: child.meta?.title?.toString() || child.name?.toString() || "未命名页面",
-          icon: child.meta?.icon || iconMap.default,
-        }))
+        icon: iconMap[route.meta?.icon || "default"],
+        ...(children.length > 0 ? { children } : {})
       };
 
       return menuItem;
@@ -70,11 +83,11 @@ const handleMenuClick = (item: MenuItem) => {
     });
 
     // 确保不重复跳转相同路径
-    if (route.path !== item.path) {
-      router.push(item.path).catch(err => {
-        console.error("路由跳转失败", err);
-      });
-    }
+    // if (route.path !== item.path) {
+    //   router.push(item.path).catch(err => {
+    //     console.error("路由跳转失败", err);
+    //   });
+    // }
   }
 };
 

@@ -11,7 +11,7 @@ const tableRoutes: RouteRecordRaw = {
   },
   children: [
     {
-      path: "/table-basic",
+      path: "/table/basic",
       name: "TableBasic",
       component: () => import("@/views/table/TableBasic.vue"),
       meta: { 
@@ -20,7 +20,7 @@ const tableRoutes: RouteRecordRaw = {
       },
     },
     {
-      path: "/table-highlight",
+      path: "/table/highlight",
       name: "TableHighlight",
       component: () => import("@/views/table/TableHighlight.vue"),
       meta: { 
@@ -29,7 +29,7 @@ const tableRoutes: RouteRecordRaw = {
       },
     },
     {
-      path: "/table-overflow",
+      path: "/table/overflow",
       name: "TableOverflow",
       component: () => import("@/views/table/TableOverflow.vue"),
       meta: { 
@@ -38,7 +38,7 @@ const tableRoutes: RouteRecordRaw = {
       },
     },
     {
-      path: "/table-fix",
+      path: "/table/fix",
       name: "TableFix",
       component: () => import("@/views/table/TableFix.vue"),
       meta: { 
@@ -47,7 +47,7 @@ const tableRoutes: RouteRecordRaw = {
       },
     },
     {
-      path: "/table-selection",
+      path: "/table/selection",
       name: "TableSelection",
       component: () => import("@/views/table/TableSelection.vue"),
       meta: { 
@@ -56,7 +56,7 @@ const tableRoutes: RouteRecordRaw = {
       },
     },
     {
-      path: "/table-filter",
+      path: "/table/filter",
       name: "TableFilter",
       component: () => import("@/views/table/TableFilter.vue"),
       meta: { 

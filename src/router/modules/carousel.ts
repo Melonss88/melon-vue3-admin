@@ -11,7 +11,7 @@ const carouselRoutes: RouteRecordRaw = {
   },
   children: [
     {
-      path: "/carousel-basic",
+      path: "/carousel/basic",
       name: "CarouselBasic",
       component: () => import("@/views/carousel/CarouselBasic.vue"),
       meta: { 
@@ -20,7 +20,7 @@ const carouselRoutes: RouteRecordRaw = {
       },
     },
     {
-      path: "/carousel-card",
+      path: "/carousel/card",
       name: "CarouselCard",
       component: () => import("@/views/carousel/CarouselCard.vue"),
       meta: { 

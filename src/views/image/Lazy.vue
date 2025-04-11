@@ -34,8 +34,7 @@ const configData = [
   {
     name: 'fit',
     declare: '确定图片如何适应容器框，同原生 object-fit',
-    type: 'enum',
-    options: ['fill', 'contain', 'cover', 'none', 'scale-down'],
+    type: "['fill', 'contain', 'cover', 'none', 'scale-down']",
     default: ''
   },
   {
@@ -47,10 +46,8 @@ const configData = [
   {
     name: 'loading',
     declare: '浏览器加载图像的策略，和浏览器原生能力一致',
-    type: 'enum',
-    options: ['eager', 'lazy'],
+    type: "['eager', 'lazy']",
     default: '—',
-    since: '2.2.3'
   },
   {
     name: 'lazy',
@@ -79,8 +76,7 @@ const configData = [
   {
     name: 'crossorigin',
     declare: '原生属性 crossorigin',
-    type: 'enum',
-    options: ['anonymous', 'use-credentials'],
+    type: "['anonymous', 'use-credentials']",
     default: '—'
   },
   {
@@ -130,14 +126,12 @@ const configData = [
     declare: '图像查看器缩放事件的最小缩放比例',
     type: 'number',
     default: 0.2,
-    since: '2.4.0'
   },
   {
     name: 'max-scale',
     declare: '图像查看器缩放事件的最大缩放比例',
     type: 'number',
     default: 7,
-    since: '2.4.0'
   }
 ];
 </script>

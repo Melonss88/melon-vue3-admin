@@ -12,7 +12,7 @@ import {
   User,
 } from "@element-plus/icons-vue";
 import SearchInput from "./SearchInput.vue"; 
-import {useUserStore} from '@/stores/user.ts'
+import {useUserStore} from '@/stores/user'
 
 const menuStore = useMenuStore();
 const route = useRoute();

@@ -19,8 +19,8 @@
 interface ConfigItem {
   name: string
   declare: string
-  type: string
-  default?: string | number | boolean
+  type: string 
+  default?: string | number | boolean | object
 }
 
 const props = withDefaults(defineProps<{

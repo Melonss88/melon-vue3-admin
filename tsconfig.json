@@ -5,6 +5,7 @@
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -13,7 +14,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["vite/client"]
+    "types": ["vite/client", "vue", "element-plus/global"],
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
@@ -22,5 +24,5 @@
     "src/**/*.vue",
     "env.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["**/node_modules/**"]
 }

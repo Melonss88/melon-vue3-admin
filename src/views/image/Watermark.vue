@@ -55,14 +55,14 @@ const configData = [
     declare: '水印文本内容',
     type: 'string | object',
     default: '—',
-    example: {
-      text: '机密文件',  // 文本内容
-      font: {           // 字体样式（当content为object时）
-        color: 'rgba(0, 0, 0, 0.15)',
-        fontSize: 16,
-        fontFamily: 'sans-serif'
-      }
-    }
+    // example: {
+    //   text: '机密文件',  
+    //   font: {
+    //     color: 'rgba(0, 0, 0, 0.15)',
+    //     fontSize: 16,
+    //     fontFamily: 'sans-serif'
+    //   }
+    // }
   },
   {
     name: 'font',
@@ -86,7 +86,6 @@ const configData = [
     declare: '水印从容器左上角的偏移（默认值为 gap/2）',
     type: '[number, number]',
     default: '动态计算值',
-    computed: '当未设置时，自动取 gap[0]/2 和 gap[1]/2'
   }
 ];
 </script>

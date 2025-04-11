@@ -98,6 +98,9 @@ body {
 .el-card {
     margin-bottom: 10px;
 }
+.el-breadcrumb {
+  display:flex;
+}
 h1 {
   margin-bottom:10px
 }

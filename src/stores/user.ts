@@ -5,6 +5,10 @@ interface UserInfo {
   roles: string[]
   avatar?: string
 }
+interface LoginResponse {
+  token: string
+  userInfo: UserInfo
+}
 
 export const useUserStore = defineStore('user', {
   state: () => ({
@@ -14,7 +18,7 @@ export const useUserStore = defineStore('user', {
   actions: {
     async login(username: string, password: string, captcha: string): Promise<boolean> {
       try {
-        const res = await new Promise((resolve) => {
+        const res = await new Promise<LoginResponse>((resolve) => {
           setTimeout(() => {
             resolve({
               token: 'mock-token-' + Date.now(),
@@ -26,8 +30,8 @@ export const useUserStore = defineStore('user', {
           }, 500)
         })
         
-        this.token = res?.token
-        this.userInfo = res?.userInfo
+        this.token = res.token
+        this.userInfo = res.userInfo
         localStorage.setItem('token', this.token)
         return true
       } catch (error) {

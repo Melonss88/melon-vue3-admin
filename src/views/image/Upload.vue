@@ -1,7 +1,7 @@
 <template>
     <div class="common-main">
         <el-card>
-            <Title title="Form表单"/>
+            <Title title="Upload 上传"/>
 
             <el-upload
               class="upload-demo"
@@ -89,11 +89,10 @@
 </template>
   
   <script lang="ts" setup name='Upload'>
-    import Title from '@/components/Title.vue'
-    import Config from '@/components/Config.vue'
     import { ref } from 'vue'
-    import { Plus,UploadFile,Delete,Download, ZoomIn } from "@element-plus/icons-vue";
-    import type { genFileId,UploadInstance, UploadProps, UploadRawFile} from 'element-plus'
+    import { Plus,Delete,Download, ZoomIn } from "@element-plus/icons-vue";
+    import type { UploadInstance, UploadProps, UploadRawFile} from 'element-plus'
+    import { genFileId,UploadFile } from 'element-plus/es/components/upload/src/upload'
 
     const upload = ref<UploadInstance>()
 
