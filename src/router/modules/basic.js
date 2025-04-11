@@ -29,7 +29,7 @@ const basicRoutes = {
         {
             path: "/i18n",
             name: "I18n",
-            component: () => import("@/views/basic/I18n.vue"),
+            component: () => import("@/views/basic/i18n.vue"),
             meta: {
                 title: "I18n",
                 icon: StarFilled,

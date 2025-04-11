@@ -42,7 +42,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@layout': fileURLToPath(new URL('./src/layout/components', import.meta.url))
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
+    // extensions: ['.ts','.mjs', '.js', '.jsx', '.tsx', '.json', '.vue']
+    extensions: ['.ts', '.js', '.vue']
   },
   // 开发服务器配置
   server: {
