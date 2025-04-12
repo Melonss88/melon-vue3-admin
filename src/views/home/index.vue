@@ -3,7 +3,7 @@
         <Statistic />
         
         <section class="home-echart-part1">
-            <el-space wrap>
+            <el-space wrap fill>
                 <el-card class="box-card">
                     <ChartPie />
                 </el-card>
@@ -43,13 +43,13 @@ import ChartLine from './components/ChartLine.vue'
 }
 
 .el-space {
-  display: flex;
-  justify-content: space-between;
+  display: flex!important;
+  justify-content: space-between!important;
 }
 .el-space__item {
     flex: 1;
-    min-width: 300px;
-    width: 500px;
+    min-width: auto!important;
+    width: 30%;
 }
 
 </style>

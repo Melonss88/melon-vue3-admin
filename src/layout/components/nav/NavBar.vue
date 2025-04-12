@@ -117,9 +117,9 @@ const capitalize = (info:string) => {
             </el-button>
             <template #dropdown>
               <el-dropdown-menu>
-                <el-dropdown-item @click="router.push('/profile')">我的主页</el-dropdown-item>
-                <el-dropdown-item @click="router.push('/messages')">我的消息</el-dropdown-item>
-                <el-dropdown-item @click="router.push('/settings')">我的设置</el-dropdown-item>
+                <el-dropdown-item @click="router.push('/user')">我的主页</el-dropdown-item>
+                <!-- <el-dropdown-item @click="router.push('/messages')">我的消息</el-dropdown-item>
+                <el-dropdown-item @click="router.push('/settings')">我的设置</el-dropdown-item> -->
                 <el-dropdown-item divided @click="logoutFn">退出登录</el-dropdown-item>
               </el-dropdown-menu>
             </template>

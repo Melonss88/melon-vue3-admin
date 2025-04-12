@@ -1,4 +1,4 @@
-import { Operation, StarFilled } from "@element-plus/icons-vue";
+import { Tools, StarFilled } from "@element-plus/icons-vue";
 import { RouteRecordRaw } from "vue-router";
 
 const basicRoutes: RouteRecordRaw = {
@@ -7,7 +7,7 @@ const basicRoutes: RouteRecordRaw = {
   meta: {
     notClickBread: true,
     title: "基础组件",
-    icon: Operation,
+    icon: Tools,
   },
   children: [
     {

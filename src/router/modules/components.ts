@@ -1,4 +1,4 @@
-import { Opportunity, StarFilled } from "@element-plus/icons-vue";
+import { SetUp, StarFilled } from "@element-plus/icons-vue";
 import { RouteRecordRaw } from "vue-router";
 
 const componentRoutes: RouteRecordRaw = {
@@ -7,7 +7,7 @@ const componentRoutes: RouteRecordRaw = {
   meta: {
     notClickBread: true,
     title: "反馈组件",
-    icon: Opportunity,
+    icon: SetUp,
   },
   children: [
     {

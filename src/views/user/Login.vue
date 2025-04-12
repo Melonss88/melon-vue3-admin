@@ -49,7 +49,7 @@
   import { ElMessage } from 'element-plus'
   import { useUserStore } from '@/stores/user'
   import { useRouter, useRoute } from 'vue-router'
-  import SimpleCaptcha from './SimpleCaptcha.vue'
+  import SimpleCaptcha from './components/SimpleCaptcha.vue'
   
   const router = useRouter()
   const route = useRoute()

@@ -1,5 +1,5 @@
 <template>
-    <div ref="chartRef" class="chart-container"></div>
+    <div ref="chartRef" class="chart"></div>
   </template>
   
   <script setup lang='ts'>
@@ -110,9 +110,9 @@
   </script>
   
   <style scoped>
- .chart-container {
-    width: 100%;
-    height: 300px;
- }
-  </style>
+  .chart {
+     width: 100%;
+     height: 300px;
+   }
+ </style>
   

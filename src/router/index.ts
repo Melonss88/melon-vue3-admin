@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { HomeFilled } from "@element-plus/icons-vue";
+import { HomeFilled,Link } from "@element-plus/icons-vue";
 import Layout from "@/layout/index.vue";
 import basic from './modules/basic'
 import components from './modules/components'
 import table from './modules/table'
 import carousel from './modules/carousel'
 import data from './modules/data'
+import excel from './modules/excel'
 import image from './modules/image'
 import error from './modules/error'
 import { useUserStore } from '@/stores/user'
@@ -37,13 +38,31 @@ export const routes = [
           hidden: false   
         }
       },
+      {
+        path: "/user",
+        name: "User",
+        component: () => import("@/views/user/User.vue"),
+        meta: { 
+          hidden: true   
+        }
+      },
       {...basic},
       {...components},
       {...table},
       {...carousel},
       {...data},
+      {...excel},
       {...image},
       {...error},
+      {
+        path: "/quterChain",
+        name: "QuterChain",
+        component: () => import("@/views/quterChain/index.vue"),
+        meta: { 
+          title: "QuterChain", 
+          icon: Link,
+        },
+      },
     ]
   },
   {

@@ -24,22 +24,12 @@ interface MenuItem {
   children?: MenuItem[];
 }
 
-// 图标名称到组件的映射
-const iconMap: Record<string, any> = {
-  home: HomeFilled,
-  document: Document,
-  components: Grid,
-  lock: Lock,
-  star: Star,
-  link: Link,
-  default: Document,
-};
 interface RawRoute {
   path: string;
   name?: string;
   meta?: {
     title?: string;
-    icon?: keyof typeof iconMap;
+    icon?: any;
     hidden?: boolean;
   };
   children?: RawRoute[];
@@ -60,13 +50,13 @@ const menuItems = computed<MenuItem[]>(() => {
           .map(child => ({
             path: child.path,
             title: child.meta?.title?.toString() || child.name?.toString() || "未命名页面",
-            icon: iconMap[child.meta?.icon || "default"],
+            icon: child.meta?.icon,
           })) || [];
 
       const menuItem: MenuItem = {
         path: route.path,
         title: route.meta?.title?.toString() || route.name?.toString() || "未命名页面",
-        icon: iconMap[route.meta?.icon || "default"],
+        icon: route.meta?.icon,
         ...(children.length > 0 ? { children } : {})
       };
 
@@ -74,24 +64,28 @@ const menuItems = computed<MenuItem[]>(() => {
     });
 });
 
-const handleMenuClick = (item: MenuItem) => {
-  // 如果是没有子菜单的路由，执行跳转并添加 tab
-  if (!item.children) {
-    tabStore.addTab({
-      title: item.title,
-      path: item.path,
-    });
+const handleMenuClick = (item: MenuItem, event?: Event) => {
+  event?.preventDefault()
+  event?.stopPropagation()
 
-    // 确保不重复跳转相同路径
-    // if (route.path !== item.path) {
-    //   router.push(item.path).catch(err => {
-    //     console.error("路由跳转失败", err);
-    //   });
-    // }
+  const normalizedPath = item.path.startsWith('/') ? item.path : `/${item.path}`
+  
+  tabStore.addTab({
+    title: item.title,
+    path: normalizedPath
+  })
+
+  if (route.path !== normalizedPath) {
+    router.push(normalizedPath).catch(() => {})
   }
-};
+}
 
 defineProps<{ collapse: boolean }>();
+
+const activeMenu = computed(() => {
+  const menu = route.meta?.activeMenu;
+  return typeof menu === "string" ? menu : route.path;
+});
 </script>
 
 <template>
@@ -100,7 +94,7 @@ defineProps<{ collapse: boolean }>();
       {{ collapse ? 'M' : 'Melon-Vue3-admin' }}
     </div>
     <el-menu
-      :default-active="route.path"
+      :default-active="activeMenu"
       :collapse="collapse"
       class="sidebar"
       :router="true"

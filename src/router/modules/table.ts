@@ -1,4 +1,4 @@
-import { Opportunity, StarFilled } from "@element-plus/icons-vue";
+import { Menu, StarFilled } from "@element-plus/icons-vue";
 import { RouteRecordRaw } from "vue-router";
 
 const tableRoutes: RouteRecordRaw = {
@@ -7,7 +7,7 @@ const tableRoutes: RouteRecordRaw = {
   meta: {
     notClickBread: true,
     title: "表格",
-    icon: Opportunity,
+    icon: Menu,
   },
   children: [
     {

@@ -1,4 +1,4 @@
-import { Opportunity, StarFilled } from "@element-plus/icons-vue";
+import { PictureFilled, StarFilled } from "@element-plus/icons-vue";
 import { RouteRecordRaw } from "vue-router";
 
 const carouselRoutes: RouteRecordRaw = {
@@ -7,7 +7,7 @@ const carouselRoutes: RouteRecordRaw = {
   meta: {
     notClickBread: true,
     title: "Image",
-    icon: Opportunity,
+    icon: PictureFilled,
   },
   children: [
     {

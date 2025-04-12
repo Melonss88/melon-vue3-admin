@@ -1,4 +1,4 @@
-import { Opportunity, StarFilled } from "@element-plus/icons-vue";
+import { VideoPlay, StarFilled } from "@element-plus/icons-vue";
 import { RouteRecordRaw } from "vue-router";
 
 const carouselRoutes: RouteRecordRaw = {
@@ -7,7 +7,7 @@ const carouselRoutes: RouteRecordRaw = {
   meta: {
     notClickBread: true,
     title: "走马灯",
-    icon: Opportunity,
+    icon: VideoPlay,
   },
   children: [
     {
