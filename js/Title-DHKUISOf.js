@@ -1,0 +1,1 @@
+import{c as o,a,b as s,e as c,C as i,R as r}from"./index-CCtaBiha.js";/* empty css                   */const n={class:"common-title"},d={__name:"Title",props:{title:{type:String,default:""}},setup(e){return(l,_)=>{const t=r;return a(),o("div",null,[s("h1",n,i(e.title),1),c(t)])}}};export{d as _};
